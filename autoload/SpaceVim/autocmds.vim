@@ -53,10 +53,10 @@ function! SpaceVim#autocmds#init() abort
     autocmd BufEnter,FileType * call SpaceVim#mapping#space#refrashLSPC()
     if executable('synclient') && g:spacevim_auto_disable_touchpad
       let s:touchpadoff = 0
-      autocmd InsertEnter * call s:disable_touchpad()
-      autocmd InsertLeave * call s:enable_touchpad()
-      autocmd FocusLost * call system('synclient touchpadoff=0')
-      autocmd FocusGained * call s:reload_touchpad_status()
+      " autocmd InsertEnter * call s:disable_touchpad()
+      " autocmd InsertLeave * call s:enable_touchpad()
+      " autocmd FocusLost * call system('synclient touchpadoff=0')
+      " autocmd FocusGained * call s:reload_touchpad_status()
     endif
     autocmd BufWritePre * call SpaceVim#plugins#mkdir#CreateCurrent()
     autocmd ColorScheme * call SpaceVim#api#import('vim#highlight').hide_in_normal('EndOfBuffer')
