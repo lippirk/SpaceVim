@@ -7,3 +7,11 @@
 "=============================================================================
 
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/main.vim'
+
+" set UI toggles
+let @i=' tw tf'
+" markdown textwidth 80
+" format with 'gq'
+au BufRead,BufNewFile *.md setlocal textwidth=80
+" don't indent when ',' ends previous line
+au BufRead,BufNewFile *.md setlocal nocindent
