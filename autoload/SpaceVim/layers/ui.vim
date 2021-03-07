@@ -83,6 +83,10 @@ function! SpaceVim#layers#ui#config() abort
   call SpaceVim#mapping#space#def('nnoremap', ['t', '8'], 'call call('
         \ . string(s:_function('s:toggle_fill_column')) . ', [])',
         \ 'highlight-long-lines', 1)
+  if g:spacevim_autocomplete_method ==# 'deoplete'
+    call SpaceVim#mapping#space#def('nnoremap', ['t', 'a'], 'call deoplete#custom#option("auto_complete", v:false)',
+          \ 'toggle autocomplete', 1)
+  endif
   call SpaceVim#mapping#space#def('nnoremap', ['t', 'b'], 'call call('
         \ . string(s:_function('s:toggle_background')) . ', [])',
         \ 'toggle background', 1)
